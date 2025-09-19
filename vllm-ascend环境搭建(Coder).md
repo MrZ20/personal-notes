@@ -1,6 +1,7 @@
 ### 要求
 
-## ![image-20250917193819025](C:\Users\57108\AppData\Roaming\Typora\typora-user-images\image-20250917193819025.png)
+##<img width="1173" height="528" alt="image-20250917193819025" src="https://github.com/user-attachments/assets/56f2d6c8-e1ff-4f4c-9bc1-25529d0eaa4d" />
+
 
 ### 创建工作台
 
@@ -192,4 +193,5 @@ for output in outputs:
     generated_text = output.outputs[0].text
     print(f"Prompt: {prompt!r}, Generated text: {generated_text!r}")
 ```
+
 
