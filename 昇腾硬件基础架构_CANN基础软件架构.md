@@ -2,7 +2,8 @@
 
 一、 昇腾硬件的核心是**达芬奇（Da Vinci）架构**，专为高效的AI计算设计。主要由：
 
-1. **AI Core**：这是执行矩阵和向量计算的核心单元 🧠，它通过[张量、矢量和标量](# 标量、矢量、张量)处理单元，高效地处理深度学习中的大量并行计算任务。![image-20251011173114647](C:\Users\57108\AppData\Roaming\Typora\typora-user-images\image-20251011173114647.png)
+1. **AI Core**：这是执行矩阵和向量计算的核心单元 🧠，它通过[张量、矢量和标量](# 标量、矢量、张量)处理单元，高效地处理深度学习中的大量并行计算任务。<img width="885" height="261" alt="image-20251011173114647" src="https://github.com/user-attachments/assets/a8d77586-5cc1-49a4-b10a-8de585d794e3" />
+
 2. **AI CPU/Control CPU**：负责任务的调度、控制流管理以及非AI计算任务。
 3. **片上高速缓存（On-chip Memory）**：靠近计算核心的高带宽存储器，用于存放中间结果，以最小化对外部内存的访问延迟。
 4. **互联接口（Interconnect）**：包括**HCCS（Huawei Cache Coherency System）**用于多芯片之间的超高速互联，以及标准的PCIe接口。（[数据并行流程](# 数据并行（Data Parallelism）)）
@@ -28,7 +29,7 @@
 
 三、 具体项目例子
 
-![image-20251011102155050](C:\Users\57108\AppData\Roaming\Typora\typora-user-images\image-20251011102155050.png)
+<img width="1108" height="607" alt="image-20251011102155050" src="https://github.com/user-attachments/assets/149d1db3-e89b-488c-934f-e2e5f348df4e" />
 
 模型：代码 + 训练数据的结果。即：
 
@@ -37,7 +38,7 @@
 
 ##### 附加
 
-###### 标量、矢量、张量![image-20251011173829158](C:\Users\57108\AppData\Roaming\Typora\typora-user-images\image-20251011173829158.png)
+###### 标量、矢量、张量<img width="905" height="352" alt="image-20251011173829158" src="https://github.com/user-attachments/assets/dff7d1eb-17af-4adb-a7b5-f1022fb0a635" />
 
 ######  数据并行（Data Parallelism）
 
@@ -62,7 +63,7 @@
 - **算力**指的是单位时间内可以执行的**浮点运算次数**。
 - 在 AI 领域，由于深度学习运算主要涉及大量的矩阵乘法（**张量计算**），因此算力通常用 **FLOPS（每秒浮点运算次数）** 来衡量。
 
-![image-20251011174551135](C:\Users\57108\AppData\Roaming\Typora\typora-user-images\image-20251011174551135.png)
+<img width="399" height="249" alt="image-20251011174551135" src="https://github.com/user-attachments/assets/ce567f5d-53bc-4f8b-a3a0-c1077f5f082c" />
 
 
 
@@ -90,4 +91,5 @@ torch-npu 的意思是 **PyTorch for NPU**（即**神经网络处理单元**）�
 
 1. **框架适配：** 它是连接主流深度学习框架 **PyTorch** 和 **昇腾 CANN 基础软件** 的桥梁。
 2. **指令翻译：** 当你的 PyTorch 代码执行 Tensor 操作时，torch-npu 会**拦截（Hijack）**这些调用，并将标准的 PyTorch 操作（原本指向 CPU 或 CUDA）自动转化为对应的 **昇腾 NPU 操作**。
+
 3. **设备管理：** 它让 PyTorch 能够识别和使用昇腾硬件设备。
